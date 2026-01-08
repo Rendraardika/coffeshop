@@ -1,0 +1,568 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.brandLogo{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid rgba(20,58,42,.25);
+}
+/* ---------- Sections ---------- */
+.section{
+  padding: 42px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionHead{
+  margin-bottom: 18px;
+}
+
+.sectionKicker{
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(20,58,42,.08);
+  color: var(--warung);
+  font-weight: 850;
+  letter-spacing: .2px;
+}
+
+.sectionTitle{
+  margin: 12px 0 8px;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+}
+
+.sectionDesc{
+  margin: 0;
+  color: var(--muted);
+  max-width: 70ch;
+  line-height: 1.7;
+}
+
+/* ---------- Menu Grid ---------- */
+.menuGrid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.menuCard{
+  border: 1px solid rgba(15,23,42,.10);
+  border-radius: var(--radius);
+  background: white;
+  padding: 14px;
+  box-shadow: 0 10px 24px rgba(2,6,23,.06);
+  display: grid;
+  gap: 10px;
+}
+
+.menuTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.menuName{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.menuPrice{
+  font-weight: 900;
+  color: var(--warung);
+  white-space: nowrap;
+}
+
+.menuDesc{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.btnFull{
+  width: 100%;
+}
+
+/* ---------- Info cards ---------- */
+.infoGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.infoCard{
+  border: 1px solid rgba(15,23,42,.10);
+  border-radius: var(--radius);
+  background: white;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(2,6,23,.06);
+}
+
+.infoTitle{
+  font-weight: 950;
+  margin-bottom: 6px;
+}
+
+.infoText{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ---------- Warung ---------- */
+.warungGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.warungCard{
+  border: 1px solid rgba(15,23,42,.10);
+  border-radius: var(--radius);
+  background: white;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(2,6,23,.06);
+}
+
+.warungLabel{
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.warungValue{
+  font-weight: 950;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.warungNote{
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ---------- Tentang ---------- */
+.aboutGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.aboutCard{
+  border: 1px solid rgba(15,23,42,.10);
+  border-radius: var(--radius);
+  background: white;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(2,6,23,.06);
+}
+
+.aboutTitle{
+  margin: 0 0 8px;
+  font-weight: 950;
+}
+
+.aboutText{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 920px){
+  .menuGrid{ grid-template-columns: 1fr 1fr; }
+  .infoGrid{ grid-template-columns: 1fr; }
+  .warungGrid{ grid-template-columns: 1fr; }
+  .aboutGrid{ grid-template-columns: 1fr; }
+}
+.menuCardMedia{ position: relative; }
+
+.menuImg{
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 10px;
+}
+
+.menuTag{
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--warung);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+/* ---------- Warung Page ---------- */
+.warungLayout{
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.warungGrid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.warungCardX{
+  border: 1px solid rgba(15,23,42,.10);
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: 0 10px 26px rgba(2,6,23,.06);
+  padding: 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.warungIcon{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(20,58,42,.10);
+  color: var(--warung);
+  font-size: 20px;
+}
+
+.warungCardTitle{
+  font-weight: 900;
+  margin-top: 2px;
+}
+
+.warungCardValue{
+  font-weight: 800;
+  color: #0b1220;
+}
+
+.warungCardNote{
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.warungSide{
+  position: sticky;
+  top: 96px;
+}
+
+.warungPhotoCard{
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(15,23,42,.10);
+  box-shadow: var(--shadow);
+  background: white;
+  position: relative;
+}
+
+.warungPhoto{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.warungPhotoOverlay{
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(15,23,42,.10);
+  backdrop-filter: blur(10px);
+  display: grid;
+  gap: 6px;
+}
+
+.warungCtas{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+@media (max-width: 920px){
+  .warungLayout{ grid-template-columns: 1fr; }
+  .warungGrid{ grid-template-columns: 1fr; }
+  .warungSide{ position: static; }
+  .warungPhoto{ height: 320px; }
+}
+/* ---------- About / Tentang ---------- */
+.aboutGrid{
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.aboutHighlight{
+  border-radius: var(--radius);
+  border: 1px solid rgba(15,23,42,.1);
+  background: var(--cream);
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.aboutStat{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aboutNum{
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--warung);
+}
+
+.aboutLabel{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Values */
+.valuesGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.valueCard{
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid rgba(15,23,42,.1);
+  box-shadow: 0 10px 26px rgba(2,6,23,.06);
+  padding: 18px;
+  text-align: center;
+}
+
+.valueIcon{
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.valueCard h3{
+  margin: 6px 0;
+  font-weight: 900;
+}
+
+/* Generic helpers */
+.center{
+  text-align: center;
+}
+
+.sectionTitle{
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.sectionText{
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.ctaGroup{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 920px){
+  .aboutGrid{ grid-template-columns: 1fr; }
+  .valuesGrid{ grid-template-columns: 1fr; }
+}
+/* Styling Hero khusus Menu */
+.menu-hero {
+  background-color: #fcfcfc;
+  padding: 60px 0 40px;
+  text-align: center;
+}
+
+/* Judul Kategori (Misal: Aneka Kopi) */
+.category-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 30px;
+  border-left: 5px solid #004d40; /* Garis hijau di kiri judul */
+  padding-left: 15px;
+}
+
+/* --- GRID LAYOUT --- */
+.menu-grid {
+  display: grid;
+  /* Responsif: Otomatis ngisi kolom minimal lebar 280px */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+/* --- CARD STYLING --- */
+.menu-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden; /* Supaya gambar gak keluar dari rounded corner */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Bayangan halus */
+  transition: transform 0.3s ease;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px); /* Efek naik pas di-hover */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Gambar Menu */
+.card-image-wrapper {
+  position: relative;
+  height: 200px; /* Tinggi gambar dipaksa sama */
+  width: 100%;
+}
+
+.menu-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Gambar dipotong rapi agar full */
+}
+
+/* Label/Tag (Paling Laris) */
+.menu-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #d32f2f; /* Merah cabe */
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Isi Kartu */
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Supaya tombol selalu di bawah rata */
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.menu-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.menu-price {
+  font-weight: 700;
+  color: #004d40; /* Hijau brand */
+  font-size: 1.1rem;
+}
+
+.menu-desc {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+/* Tombol Pesan */
+.btn-pesan {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  border: 2px solid #004d40;
+  color: #004d40;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-pesan:hover {
+  background-color: #004d40;
+  color: white;
+}
+/* Style khusus untuk gambar foto di dalam kartu */
+.card-img-full {
+  width: 100%; /* Agar lebar memenuhi kartu */
+  height: 200px; /* Atur tinggi gambar sesuai keinginan */
+  margin-bottom: 1rem;
+  overflow: hidden; /* Mencegah gambar keluar batas */
+  border-radius: 8px; /* Opsional: Agar sudut gambar tumpul */
+}
+
+.card-img-full img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* PENTING: Agar gambar tidak gepeng/tertarik */
+  display: block;
+}
