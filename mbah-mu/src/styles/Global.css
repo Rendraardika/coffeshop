@@ -1530,3 +1530,135 @@ img{ max-width: 100%; display: block; }
     height: 220px;
   }
 }
+/* =======================================================
+   FIX TAMPILAN MOBILE (PASTE DI BARIS PALING BAWAH)
+   ======================================================= */
+
+@media (max-width: 920px) {
+  /* --- 1. PERBAIKAN NAVBAR AGAR TIDAK TABRAKAN --- */
+  .container {
+    width: 90%; /* Pastikan kontainer tidak terlalu mepet */
+  }
+
+  .nav {
+    height: auto;
+    padding: 15px 0;
+    flex-wrap: nowrap; /* Jangan turun baris */
+  }
+
+  .brand {
+    min-width: auto; /* Hapus batasan lebar */
+    flex: 1; /* Biarkan brand mengambil sisa ruang */
+  }
+  
+  .brandName {
+    font-size: 16px; /* Kecilkan nama warung sedikit */
+  }
+  
+  .brandTagline {
+    display: none; /* Sembunyikan tagline di HP biar bersih */
+  }
+
+  .navRight {
+    min-width: auto; /* Hapus batasan lebar */
+    gap: 8px;
+  }
+
+  /* Sembunyikan tombol "Cari Warung" di HP karena menuhin layar */
+  .navFind {
+    display: none; 
+  }
+
+  .btnPrimary {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* --- 2. PERBAIKAN HERO SECTION --- */
+  .hero {
+    /* Matikan tinggi fix jika ada */
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .heroGrid {
+    display: flex;
+    flex-direction: column-reverse; /* Gambar di ATAS, Teks di BAWAH */
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  /* Rapikan Teks Hero */
+  .heroText {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .heroTitle {
+    font-size: 32px; /* Kecilkan judul */
+    line-height: 1.2;
+  }
+  
+  .heroDesc {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .heroActions {
+    justify-content: center; /* Tombol rata tengah */
+    width: 100%;
+  }
+
+  .heroMeta {
+    justify-content: center; /* Rating dll rata tengah */
+    margin-top: 30px;
+    gap: 15px;
+  }
+  
+  .metaDivider {
+    display: none; /* Hilangkan garis pembatas di HP */
+  }
+
+  .metaItem {
+    min-width: auto; /* Biar ga lebar-lebar amat */
+    text-align: center;
+  }
+
+  /* Rapikan Gambar Hero */
+  .heroMedia {
+    margin-top: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .heroCard {
+    width: 100%;
+    max-width: 350px; /* Batasi lebar gambar */
+    margin: 0 auto;
+  }
+
+  .heroImg {
+    height: 280px; /* KURANGI TINGGI GAMBAR di HP (dari 520px ke 280px) */
+  }
+
+  .heroOverlay {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 10px;
+  }
+
+  /* --- 3. PERBAIKAN SECTION LAIN --- */
+  .sectionGrid {
+    grid-template-columns: 1fr; /* Paksa jadi 1 kolom */
+    gap: 30px;
+  }
+
+  .cardMedia {
+    height: 200px; /* Pastikan gambar card tidak gepeng */
+  }
+  
+  .footer {
+    padding: 30px 15px;
+  }
+}
