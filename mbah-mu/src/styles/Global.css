@@ -1662,3 +1662,112 @@ img{ max-width: 100%; display: block; }
     padding: 30px 15px;
   }
 }
+/* =======================================================
+   UPDATE CSS MOBILE & NAVBAR (PASTE PALING BAWAH)
+   ======================================================= */
+
+/* Sembunyikan tombol hamburger di Desktop */
+.navToggle {
+  display: none;
+}
+
+/* Tampilkan tombol aksi desktop secara default */
+.desktopOnly {
+  display: flex;
+}
+
+/* Sembunyikan tombol mobile action di desktop */
+.mobileAction {
+  display: none;
+}
+
+/* --- TAMPILAN KHUSUS HP (Max width 920px) --- */
+@media (max-width: 920px) {
+
+  /* 1. SETUP NAVBAR HEADER */
+  .nav {
+    justify-content: space-between; /* Logo kiri, Hamburger kanan */
+    padding: 15px 0;
+    position: relative; /* Penting untuk menu dropdown */
+  }
+
+  /* Munculkan tombol Hamburger */
+  .navToggle {
+    display: block;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--ink);
+    padding: 10px;
+    z-index: 100; /* Supaya di atas menu */
+  }
+
+  /* Sembunyikan tombol kanan desktop (Pesan Sekarang) karena pindah ke menu */
+  .desktopOnly {
+    display: none; 
+  }
+
+  /* 2. MENU DROPDOWN (NAV LINKS) */
+  .navLinks {
+    display: none; /* Default sembunyi */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Muncul persis di bawah header */
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 0 0 20px 20px;
+    gap: 15px;
+    z-index: 99;
+  }
+
+  /* Class .open ditambahkan oleh React saat tombol diklik */
+  .navLinks.open {
+    display: flex; /* Munculkan menu */
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  /* Styling link di dalam menu HP */
+  .navLinks a {
+    display: block;
+    padding: 12px 16px;
+    background: #f8fafc; /* Abu sangat muda */
+    border-radius: 12px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  /* Tombol Pesan di dalam menu HP */
+  .mobileAction {
+    display: block;
+    margin-top: 10px;
+  }
+  .mobileAction .btn {
+    width: 100%; /* Tombol full width */
+    display: block;
+    text-align: center;
+  }
+
+  /* 3. PERBAIKAN TOMBOL HERO (Agar muncul dua-duanya) */
+  .heroActions {
+    flex-direction: column; /* Tumpuk ke bawah */
+    gap: 12px;
+    width: 100%;
+    padding: 0 20px; /* Sedikit padding agar tidak mepet layar */
+  }
+
+  .heroActions .btn {
+    width: 100%; /* Paksa tombol selebar layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Animasi Menu Turun */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
